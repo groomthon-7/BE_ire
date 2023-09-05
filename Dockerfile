@@ -1,8 +1,3 @@
-FROM adoptopenjdk/openjdk11 AS builder
-COPY gradlew .
-COPY gradle gradle
-COPY build.gradle .
-COPY settings.gradle .
-COPY src src
-RUN chmod +x ./gradlew
-RUN ./gradlew bootJar
+FROM openjdk:11-jre
+COPY build/libs/goormthon-0.0.1-SNAPSHOT.jar app.jar
+ENTRYPOINT ["java","-jar","app.jar"]
