@@ -1,3 +1,11 @@
 FROM openjdk:11-jre
-COPY build/libs/goormthon-0.0.1-SNAPSHOT.jar app.jar
-ENTRYPOINT ["java","-jar","app.jar"]
+
+ENV APP_HOME=/usr/app/
+
+WORKDIR $APP_HOME
+
+COPY build/libs/*.jar application.jar
+
+EXPOSE 8080
+
+CMD ["java", "-jar", "application.jar"]
