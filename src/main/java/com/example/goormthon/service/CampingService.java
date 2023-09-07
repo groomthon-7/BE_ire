@@ -24,4 +24,12 @@ public class CampingService {
     public List<CampingSite> findAllCampingSites() {
         return campingRepository.findAll();
     }
+
+    public List<CampingSite> getCampingInJeju() {
+        return campingRepository.findByAddressContaining("제주시");
+    }
+
+    public List<CampingSite> getCampingInSeogwipo() {
+        return campingRepository.findByAddressContaining("서귀포시");
+    }
 }

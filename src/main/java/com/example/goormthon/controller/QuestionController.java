@@ -33,4 +33,13 @@ public class QuestionController {
     public List<CampingSite> getAllCampingSites() {
         return campingService.findAllCampingSites();
     }
+    @GetMapping("/camping-in-jeju")
+    public List<CampingSite> getCampingInJeju() {
+        return campingService.getCampingInJeju();
+    }
+
+    @GetMapping("/camping-in-seogwipo")
+    public List<CampingSite> getCampingInSeogwipo() {
+        return campingService.getCampingInSeogwipo();
+    }
 }
