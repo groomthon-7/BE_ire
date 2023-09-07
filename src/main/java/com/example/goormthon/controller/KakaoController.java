@@ -30,4 +30,8 @@ public class KakaoController {
 
         return ResponseEntity.ok(code);
     }
+    @GetMapping("/hello")
+    public String hello(){
+        return "heelo";
+    }
 }
