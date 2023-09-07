@@ -48,8 +48,7 @@ public class CampingSite {
     private Integer parkingCapacity;
     @Column(name = "tags")
     private String tags;
-
-    @Column(name="img")
+    @Column(columnDefinition = "TEXT")
     private String img;
 
 }
