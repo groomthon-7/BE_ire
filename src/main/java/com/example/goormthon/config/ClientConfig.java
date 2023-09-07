@@ -13,19 +13,6 @@ import java.net.Proxy;
 @Configuration
 public class ClientConfig {
 
-//    @Bean
-//    public RestTemplate restTemplate() {
-////
-//////        @Value("${proxy.host}")
-////        Proxy proxyHost = null;
-//////        @Value("${proxy.port}")
-////        Proxy proxyPort;
-////        SimpleClientHttpRequestFactory factory = new SimpleClientHttpRequestFactory();
-////        factory.setProxy(proxyHost);
-////        factory.setProxy(proxyPort);
-////        return new RestTemplate();
-//
-//    }
     @Bean
     public RestTemplate restTemplate() {
         String proxyHost = "krmp-proxy.9rum.cc";
@@ -36,4 +23,8 @@ public class ClientConfig {
 
         return new RestTemplate(factory);
     }
+//    @Bean
+//    public RestTemplate restTemplate(){
+//        return new RestTemplate();
+//    }
 }
