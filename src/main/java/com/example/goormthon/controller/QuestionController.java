@@ -7,6 +7,7 @@ import com.example.goormthon.model.repository.CampingRepository;
 import com.example.goormthon.model.repository.JejuRepository;
 import com.example.goormthon.model.repository.SeogipoRepository;
 import com.example.goormthon.service.CampingService;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -44,4 +45,9 @@ public class QuestionController {
         return seogipoRepository.findAll();
 //        return campingService.getCampingInSeogwipo();
     }
+    @GetMapping("/find-complex")
+    public List<CampingSite> findComplex(){
+        return campingRepository.findByAddressContaining("조천읍");
+    }
+
 }
