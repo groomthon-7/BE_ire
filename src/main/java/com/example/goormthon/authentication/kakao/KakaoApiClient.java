@@ -71,4 +71,26 @@ public class KakaoApiClient implements OAuthApiClient {
         return restTemplate.postForObject(url, request, OAuthInfoResponse.KakaoInfoResponse.class);
     }
 
+//    @Override
+//    public void sendRequest() {
+//        String requestUrl = "https://kapi.kakao.com/v1/user/ids";
+//
+//        HttpHeaders headers = new HttpHeaders();
+//        headers.set("Authorization", clientId); // 실제 키로 대체
+//
+//        HttpEntity<?> requestEntity = new HttpEntity<>(headers);
+//        ResponseEntity<String> responseEntity = restTemplate.exchange(
+//                requestUrl,
+//                HttpMethod.GET,
+//                requestEntity,
+//                String.class
+//        );
+//
+//        if (responseEntity.getStatusCode() == HttpStatus.OK) {
+//            String responseBody = responseEntity.getBody();
+//            System.out.println("응답 내용: " + responseBody);
+//        } else {
+//            System.out.println("HTTP 요청 실패. 응답 코드: " + responseEntity.getStatusCodeValue());
+//        }
+//    }
 }

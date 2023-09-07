@@ -7,6 +7,7 @@ public interface OAuthApiClient {
     OAuthProvider oAuthProvider();
     String requestAccessToken(OAuthLoginParams params);
 
+//    void sendRequest();
     OAuthInfoResponse requestOauthInfo(String accessToken);
 
 }
