@@ -52,7 +52,7 @@ public class QuestionController {
         return campingRepository.findByAddressContaining("조천읍");
     }
     @GetMapping("/details")
-    public detailsDto getOneDetails(@RequestParam String id){
+    public detailsDto getOneDetails(@RequestParam Integer id){
         CampingSite campingSite = campingRepository.findById(id).get();
         return detailsDto.from(campingSite);
     }
