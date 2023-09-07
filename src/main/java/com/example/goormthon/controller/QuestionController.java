@@ -29,7 +29,7 @@ public class QuestionController {
         return ResponseEntity.ok(campingService.getAllJeju(tagDto));
     }
 
-    @GetMapping("/camping-sites")
+    @GetMapping("/ques/all")
     public List<CampingSite> getAllCampingSites() {
         return campingService.findAllCampingSites();
     }
