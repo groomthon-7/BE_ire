@@ -1,4 +1,4 @@
-FROM openjdk:11-jre
+FROM ogradle:8.3-jdk11
 
 ENV APP_HOME=/usr/app/
 
