@@ -15,7 +15,7 @@ import java.util.List;
 public class CampingService {
 
     private final CampingRepository campingRepository;
-    public static CampingSiteDao getAllJeju(TagDto tagDto) {
+    public CampingSiteDao getAllJeju(TagDto tagDto) {
         return null;
     }
     private String generateTagsFromCampingTag(TagDto tag){

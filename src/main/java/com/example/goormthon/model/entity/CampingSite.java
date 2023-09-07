@@ -12,16 +12,16 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "CampingSite")
+@Entity(name = "campingsite")
 public class CampingSite {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Integer id;
 
-    @Column(name="businessName")
+    @Column(name="businessname")
     private String businessName;
-    @Column(name = "phoneNumber")
+    @Column(name = "phonenumber")
     private String phoneNumber;
     @Column(name = "address")
     private String address;
@@ -29,24 +29,26 @@ public class CampingSite {
     private Double latitude;
     @Column(name = "longitude")
     private Double longitude;
-    @Column(name = "glampingCount")
+    @Column(name = "glampingcount")
     private String glampingCount;
-    @Column(name = "caravanCount")
+    @Column(name = "caravancount")
     private String caravanCount;
-    @Column(name = "campingDeckCount")
+    @Column(name = "campingdeckcount")
     private String campingDeckCount;
-    @Column(name = "outdoorCampingCount")
+    @Column(name = "outdoorcampingcount")
     private String outdoorCampingCount;
-    @Column(name = "hasToilet")
+    @Column(name = "hastoilet")
     private String hasToilet;
-    @Column(name = "hasShower")
+    @Column(name = "hasshower")
     private String hasShower;
-    @Column(name = "hasWashbasin")
+    @Column(name = "haswashbasin")
     private String hasWashbasin;
-    @Column(name = "parkingCapacity")
+    @Column(name = "parkingcapacity")
     private int parkingCapacity;
     @Column(name = "tags")
     private String tags;
 
+    @Column(name="img")
+    private String img;
 
 }
