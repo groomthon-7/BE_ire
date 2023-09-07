@@ -1,5 +1,6 @@
 package com.example.goormthon.controller;
 
+import com.example.goormthon.model.dto.detailsDto;
 import com.example.goormthon.model.entity.CampingSite;
 import com.example.goormthon.model.entity.Jeju;
 import com.example.goormthon.model.entity.Seogipo;
@@ -10,6 +11,7 @@ import com.example.goormthon.service.CampingService;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -40,7 +42,7 @@ public class QuestionController {
 //        return campingService.getCampingInJeju();
     }
 
-    @GetMapping("/camping-in-seogwipo")
+    @GetMapping("/camping-in-seogipo")
     public List<Seogipo> getCampingInSeogwipo() {
         return seogipoRepository.findAll();
 //        return campingService.getCampingInSeogwipo();
@@ -48,6 +50,11 @@ public class QuestionController {
     @GetMapping("/find-complex")
     public List<CampingSite> findComplex(){
         return campingRepository.findByAddressContaining("조천읍");
+    }
+    @GetMapping("/details")
+    public detailsDto getOneDetails(@RequestParam String id){
+        CampingSite campingSite = campingRepository.findById(id).get();
+        return detailsDto.from(campingSite);
     }
 
 }
