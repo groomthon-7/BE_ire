@@ -31,6 +31,7 @@ public class QuestionController {
     @GetMapping("/ques/all")
     public ResponseEntity<List<CampingSiteDao>> getAllJejuCamping(){
         List<CampingSiteDao> campingSites = campingService.getAllCampingSites();
+        log.error(campingSites.get(1).getTags());
         return ResponseEntity.ok(campingSites);
     }
 }
