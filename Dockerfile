@@ -9,4 +9,4 @@ COPY /build/libs/*.jar .
 EXPOSE 8080
 ENV DATABASE_URL=jdbc:mariadb://mariadb/groomthon
 
-CMD ["java", "-jar", "goormthon-0.0.1-SNADPSHOT.jar"]
+CMD ["java", "-jar", "goormthon-0.0.1-SNAPSHOT.jar"]
