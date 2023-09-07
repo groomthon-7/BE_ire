@@ -13,4 +13,4 @@ RUN ./gradlew clean build
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "/usr/app/build/libs/goormthon-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "-Dspring.profiles.active=prod", "/usr/app/build/libs/goormthon-0.0.1-SNAPSHOT.jar"]
