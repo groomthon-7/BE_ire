@@ -21,10 +21,7 @@ public class CampingService {
     private String generateTagsFromCampingTag(TagDto tag){
         return null;
     }
-
-    public List<CampingSiteDao> getAllCampingSites() {
-
-        List<CampingSite> campingSites = campingRepository.findAll();
-        return CampingSiteMapper.mapEntitiesToDaos(campingSites);
+    public List<CampingSite> findAllCampingSites() {
+        return campingRepository.findAll();
     }
 }

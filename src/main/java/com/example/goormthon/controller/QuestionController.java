@@ -2,6 +2,7 @@ package com.example.goormthon.controller;
 
 import com.example.goormthon.model.dao.CampingSiteDao;
 import com.example.goormthon.model.dto.TagDto;
+import com.example.goormthon.model.entity.CampingSite;
 import com.example.goormthon.model.repository.CampingRepository;
 import com.example.goormthon.service.CampingService;
 import lombok.RequiredArgsConstructor;
@@ -28,10 +29,8 @@ public class QuestionController {
         return ResponseEntity.ok(campingService.getAllJeju(tagDto));
     }
 
-    @GetMapping("/ques/all")
-    public ResponseEntity<List<CampingSiteDao>> getAllJejuCamping(){
-        List<CampingSiteDao> campingSites = campingService.getAllCampingSites();
-        log.error(campingSites.get(1).getTags());
-        return ResponseEntity.ok(campingSites);
+    @GetMapping("/camping-sites")
+    public List<CampingSite> getAllCampingSites() {
+        return campingService.findAllCampingSites();
     }
 }
