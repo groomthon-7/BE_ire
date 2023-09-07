@@ -1,6 +1,7 @@
 package com.example.goormthon.model.entity;
 
 import com.example.goormthon.model.dao.CampingSiteDao;
+import io.swagger.models.auth.In;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,7 +16,7 @@ import javax.persistence.*;
 @Entity(name = "campingsite")
 public class CampingSite {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 
@@ -43,8 +44,8 @@ public class CampingSite {
     private String hasShower;
     @Column(name = "haswashbasin")
     private String hasWashbasin;
-    @Column(name = "parkingcapacity")
-    private int parkingCapacity;
+    @Column(name = "parkingcapacity",nullable = true)
+    private Integer parkingCapacity;
     @Column(name = "tags")
     private String tags;
 
