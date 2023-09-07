@@ -15,7 +15,7 @@ import java.util.Arrays;
 
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+//@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
 
     @Bean
@@ -40,13 +40,13 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
 
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOriginPatterns(Arrays.asList("*","https://user-app.krampoline.com/kb009472ec65da/*")); // 허용할 URL
+        configuration.setAllowedOriginPatterns(Arrays.asList("*")); // 허용할 URL
 
         configuration.setAllowedMethods(
-                Arrays.asList("OPTIONS", "HEAD", "GET", "POST", "PUT", "PATCH", "DELETE")); // 허용할 메서드
+                Arrays.asList("*")); // 허용할 메서드
 
         configuration.setAllowedHeaders(
-                Arrays.asList("Authorization", "Cache-Control", "Content-Type", "Set-Cookie")); // 허용할 Header
+                Arrays.asList("Authorization", "refresh")); // 허용할 Header
 
         configuration.setAllowCredentials(true);
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
