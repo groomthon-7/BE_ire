@@ -12,6 +12,8 @@ import java.util.Optional;
 @Repository
 public interface CampingRepository extends JpaRepository<CampingSite,Integer> {
     List<CampingSite> findByAddressContaining(String keyword);
+
+    List<CampingSite> findByTagsContaining(String keyword);
 }
 
 
