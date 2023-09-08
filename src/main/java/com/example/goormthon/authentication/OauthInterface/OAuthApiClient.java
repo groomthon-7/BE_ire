@@ -10,4 +10,6 @@ public interface OAuthApiClient {
 //    void sendRequest();
     OAuthInfoResponse requestOauthInfo(String accessToken);
 
+    String searchMT1Nearby(double latitude,double longitude,String keyword);
+
 }

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @Component
 @RequiredArgsConstructor
@@ -69,6 +70,28 @@ public class KakaoApiClient implements OAuthApiClient {
         HttpEntity<?> request = new HttpEntity<>(body, httpHeaders);
 
         return restTemplate.postForObject(url, request, OAuthInfoResponse.KakaoInfoResponse.class);
+    }
+
+    @Override
+    public String searchMT1Nearby(double latitude, double longitude,String keyword) {
+        String apiUrl = "https://dapi.kakao.com/v2/local/search/category.json";
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", "KakaoAK " + clientId);
+
+        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(apiUrl)
+                .queryParam("category_group_code", keyword) // MT1(대형마트) 카테고리 코드
+                .queryParam("x", longitude)
+                .queryParam("y", latitude);
+
+        RequestEntity<?> requestEntity = new RequestEntity<>(headers, HttpMethod.GET, builder.build().toUri());
+        ResponseEntity<String> responseEntity = new RestTemplate().exchange(requestEntity, String.class);
+
+        if (responseEntity.getStatusCode().is2xxSuccessful()) {
+            return responseEntity.getBody();
+        } else {
+            return "Error";
+        }
     }
 
 //    @Override
