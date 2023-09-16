@@ -20,8 +20,6 @@ public class CampingService {
 
     private final CampingRepository campingRepository;
     public List<CampingSite> getAllJeju(String tag) {
-//        CampingSite campingSite =
-//                .orElseThrow(()-> new GlobalException(ErrorCode.NOT_HAVE_JEJU_ADDRESS));
         return campingRepository.findByTagsContaining(tag);
     }
     private String generateTagsFromCampingTag(TagDto tag){
